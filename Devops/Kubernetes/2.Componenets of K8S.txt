@@ -1,0 +1,78 @@
+Components in K8S:
+
+** NODE:
+
+A.POD: It is the smallest unit in K8S. Where POD can have multiple container in it.
+>each POD's get its own IP address
+>if any container goes down then new POD is created with new IP address
+
+B.Service : Service is attached to a POD. Where service provides static IP address for the POD.
+Even if POD goes down, service remains working and hence IP address remains constant.
+Service also works as a Loadbalancer, where it routes traffic to available container.
+
+C.Cluster: Group of nodes is called as Cluster
+
+D. Ingress : It is used to route the traffic to cluster/service.
+Without Ingress we have to specify the IP address and port number of the POD.
+
+E.Configmap: It is used to map the variable to service name.
+Ex: If we want to change the service name of POD. It will become difficult if we hard code the value in applications running in POD.
+So if we use Configmap then we easily update the new service name in the Configmap and all the POD's can refer the updated service name.
+
+F.SECRET: If we want to store sensitive information in POD then we have to use SECRET. 
+Where SECRET will have base64 encoded.
+
+G: VOLUMES: K8S suppourts DATA to be stored in strorage type called VOLUMES. Where VOLUMES can be Localy available or remotely available.
+Where VOLUMES is used so that if any POD goes down then DATA will be lost. So we store DATA and reference to use that as ROOT VOLUME.
+
+H. DEPLOYEMENT: We can easily replicate and Deploy POD using DEPLOYEMENT.
+
+I. STATEFULSET: It is used to create the stateful applications such as DATABASES.
+
+
+
+
+3 main components on worker Node:
+1.Container Runtime: It may be Docker or any other containerization service.
+2.Kublet: It interacts with NODE and Kublet where helps in (De)Scaling of containers, 
+and it is the one which assigns the resources to the containers.
+3.Kubeproxy: It provides dynamic IP address to POD.If POD stops and starts then IP address get changed
+
+
+
+
+4 main components on Master Node:
+1.API server: We interact with API server through client(GUI/CLI) and API server is entry point of communication for Master. 
+API server acts as Cluster Gateway and it acts as Gatekeeper as it authenticates the request.
+
+2.Scheduler: It decides where to schedule depending on the available resources on NODE, where Kublet does the next work of provisiong.
+ 
+3.Controller Manager: It used to detect the cluster changes and if any cluster fails then it uses Scheduler for re-provisiong the containers/POD's/Clusters
+It always try to maintain the balance between Actual state and Defined state
+
+4.etcd: Its an key value store of any cluster state. When new POD is scheduled,goes down everything is noted.
+
+
+
+Other components of Master Node:
+1.Node controller: This provides the information whether Nodes are working or not
+
+2.Route Controller: This setup routing inforamtion of the network setup. Ex: How to reach POD's
+
+3.Service controller: This is responsible for Load balancing between services
+
+4.Volume controller: For creating,attaching, and mounting volumes 
+
+
+
+
+Note: By default POD dont have auto healing and auto scaling properties. We have to add plugins.
+
+
+
+
+
+
+
+
+

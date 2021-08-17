@@ -1,0 +1,8 @@
+Locals:
+
+locals
+{
+name = "shashi"
+designation = "Programming Analyst"
+}
+

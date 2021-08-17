@@ -1,0 +1,183 @@
+Link:
+
+AKIAYXOL2TREIQVBD76Y
+4Pw89OEj/Uj6lQZnVFryKktP9JRooBVfV6KEuJV0
+
+
+Basic:
+
+Terraform is Infrastructure as a code tool. Where we can deploy infrastructure using code.
+Means if we want to launch an isnatance no need to login to AWS console, we can luanch an instance without 
+logining into console using terraform.
+Terraform is leading Tool in Devops Platform, where it is used to depoly Infrastrucutre.
+When it comes to AWS we have in house service called AWS cloudformation it can also be used to depoly
+Infrastrucutre in AWS and AWS Cloud formation is visually appealing where there is we can use Visual editor 
+which will be converted to JSON or YAML based on selection.
+
+Then why we need Terraform in AWS?
+We all know that our infrastuture doesnt contain only AWS but also Git Hub/Lab, Chef, Jenkins 
+and Azure/GCP(if Multicloud). It would be difficult to ofin and do modification. Moreover when it comes to time 
+constraints Terraform reduces 75% of the time taken using Manual procedure.
+And when we want similar infrasruture for different client it would become difficult and time taking process.
+So if we have complete Infra as a code we can easily setup env by a single click.
+
+When Terraform should be used? and when Ansible?
+Ansible is used to configure the Infra but not to Deploy.
+Terraform is ued to deploy infra not to configure it.
+
+
+
+
+
+Terraform Basic commands:
+Terraform init- it initializes all the modules before it could execute he changes
+Terraform plan- it plan's/lists out the changes before it could execute the changes
+Terraform apply- it apply he changes/ it starts to depoly the Infra.
+Terraform destroy- it will destroy only the Infra created by Terraform
+Terraform fmt - it make the .tf foramt to correctly indented and resmoves unnecessary spaces in between
+Terraform validate - it will validate whether code is correct or not. It will work same as terraform apply, 
+                 but in apply it gives all the resources it going to add and their properties(ARN,NAME,etc)
+Terraform taint resource-name - it marks the specific resources in .tfstaefile as tainted. And the maked resources is destroyed and recreated on next Plan.
+                Here resource name should be replaced with resource name for ex: Instane name
+Terraform untaint resource-name - it removes tainted DATA from .tfstatefile
+ 
+
+
+Terraform advanced commands:
+Terraform plan -out=path.tf ---> it saves the plan to path.tf. We can rename path.tf to our convinience like output.tf
+Terraform plan -destroy ---> it generates what will be going to destroy
+Terraform plan -var 'variable-name=variable-value' ---> set the value to variable in Terraform configuration file
+Terraform plan -var-file=variable-value  ---> set variables in the configuration file from a variable file
+Terraform plan -compact-warnings  ---> show the error messages in more compact form that includes the summary messages
+Terraform plan -input=true  ---> ask for input for variables if not directly set
+
+Terraform show -json ---> it shows the terraform state file in json format
+
+
+
+
+
+
+
+
+
+
+
+
+Important:
+1.tf statefile: it saves all the Infra details in a file called state file. Where it saves only the Data of the Infra created by Terraform.
+.tf file format: We have to save the Terraofrm file in  " .tf ".
+2. create export path to initialize Terraform anywhere
+export PATH=/home/ec2-user/Terraform/:$PATH
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+Scenario 1:
+To avoid use of Access key and Secret key every time its best to create Profile in AWS CLI.
+
+*Command without Profile: aws configure
+Note: Next you will provide access key and secret key. 
+But if this user doesnt have access to S3, then again you have to login using another Access key and Secret key.
+So to avoid this we can create profile in CLI.
+
+1.Command: to create AWS profile: aws configure --profile s3user
+Note: It will ask credentials for first time and from next time it will not ask any credentials.
+
+For ex: s3 ls -- profile s3 user
+Note: It will display all the S3 bucket in account
+
+2. Command: to create AWS profile: aws configure --profile ec2user
+Note: It will ask credentials for first time and from next time it will not ask any credentials.
+
+For ex: ec2 describe-instance -- profile s3 user
+Note: It will display all the ec2 in account
+
+Scenario 1(continued):
+After creating profile,
+ if we want to see s3 bucket then, s3 command will be: aws s3 ls -- profile s3user
+if we want to see ec2 instances then, ec2 command will be: aws ec2-descibe instance --profile ec2user
+So again typing "--profile  followed by profile name" would become difficult. 
+This switch happens because Access key and secret key is stored in path: ~/.aws/credentials
+
+*To avoid using profile name every time , 
+command: export aws_profile=s3user
+now we can work with s3 without using --profile command. If we want to switch to view instance 
+then we have to use "aws ec2-describe --profile ec2-user" . 
+
+*To make ec2 user as default,
+ we can use command:export aws_profile=ec2user.
+
+*To view which profile it is used,
+command: echo $aws_profile
+
+* to view which aws account,user name,ARN:
+command: aws sts get-caller-identity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
