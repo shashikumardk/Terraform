@@ -1,9 +1,3 @@
-Link:
-
-AKIAYXOL2TREIQVBD76Y
-4Pw89OEj/Uj6lQZnVFryKktP9JRooBVfV6KEuJV0
-
-
 Basic:
 
 Terraform is Infrastructure as a code tool. Where we can deploy infrastructure using code.
