@@ -9,5 +9,6 @@ resource "aws_vpc" "vpc1" {
 
   tags = {
     date= var.date
+    name = var.name
   }
 }

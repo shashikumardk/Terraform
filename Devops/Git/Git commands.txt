@@ -1,6 +1,7 @@
 creating and configuring git:
-git remote add origin git@github.com:shashikumardk/project.git
-git remote set-url git@github.com:shashikumardk/project.git
+git init
+git remote add origin git@github.com:shashikumardk/Terraform.git
+
 
 starting commands:
 git init                            >>>>> to initialize the git

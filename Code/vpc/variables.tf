@@ -5,3 +5,7 @@ variable "cidr" {
 variable "date" {
   default = "17082021"
 }
+
+variable "name" {
+  default = "delete"
+}
