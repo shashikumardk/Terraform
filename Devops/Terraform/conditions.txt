@@ -2,7 +2,7 @@
 If not met then that part of code will be skipped and can pop up with error message.
 
 ex: Below validation checks AMI-Length,
-
+A.
 variable "ami-id" {
 type = "string"
 description = "The id of the machine image(AMI)"
@@ -13,7 +13,14 @@ error_message = "The image_id value should be valid ami id"
 }
 }
 
+B.
+variable "ami-id" {
+  type        = string
+  default     = "ami-04db49c0fb2215364"
+  description = "The id of the machine image(AMI)"
+  validation {
+    condition     = length(var.ami-id) < 4
+    error_message = "The image_id value should be valid ami id."
+  }
+}
 
-0-127
-127-255
-9449780531-krishna
