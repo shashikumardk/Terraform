@@ -1,8 +1,13 @@
-provider "aws" {
-  region = "ap-south-1"
-  profile = "default"
+resource "aws_vpc" "vpc-internetfacing" {
+  cidr_block = var.cidr
+  tags       = merge(local.vpc-local-tags, var.resource)
 }
 
-module "call-vpc" {
-  source = "vpc"
+
+#tags to be associated with locals
+locals {
+  vpc-local-tags = {
+    igw  = "yes"
+    type = "delete"
+  }
 }
