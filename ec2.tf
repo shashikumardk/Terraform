@@ -14,4 +14,5 @@ resource "aws_instance" "myinstance" {
   ami           = var.ami-id
   instance_type = "t2.micro"
   user_data     = file("httpd.sh")
+  vpc_security_group_ids = [data.aws_security_group.calling-defualt-sg.id]
 }
