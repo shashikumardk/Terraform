@@ -18,12 +18,3 @@ variable "azs-cidrs" {
   }
 }
 
-
-#ec2 variables
-variable "ami-id" {
-  default = "ami-04db49c0fb2215364"
-  validation {
-    condition     = length(var.ami-id) > 4 && substr(var.ami-id, 0, 4) == "ami-"
-    error_message = "The image_id value should be valid ami id."
-  }
-}
