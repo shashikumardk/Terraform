@@ -1,8 +1,0 @@
-For each
-Data Block Implementation
-If else conditions
-Outputs
-Count
-Toset
-Tolist
-Try to pass variables from tfvars
