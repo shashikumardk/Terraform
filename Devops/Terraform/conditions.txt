@@ -1,0 +1,19 @@
+1.Validate: it validates whether the condition is met or not. 
+If not met then that part of code will be skipped and can pop up with error message.
+
+ex: Below validation checks AMI-Length,
+
+variable "ami-id" {
+type = "string"
+description = "The id of the machine image(AMI)"
+
+validation {
+condition = length(var.image_id) > 4 && substr(var.image_id,0,4) == 'ami-'
+error_message = "The image_id value should be valid ami id"
+}
+}
+
+
+0-127
+127-255
+9449780531-krishna
