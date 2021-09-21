@@ -5,5 +5,4 @@ variable "filter_key" {
 
 #Tag value to filter
 variable "filter_value" {
-  type = string
 }
