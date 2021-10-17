@@ -1,0 +1,1 @@
+this projects launchs ec2 instances based on names of subnet

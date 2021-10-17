@@ -1,0 +1,80 @@
+To learn chmod
+
+In Linux we have , 
+User-->Shell-->Kernel-->Hardware structure. Where the shell scripting written is checked and if command is valid then it
+converts the command to kernel understandable laungauge.
+
+Where kernel manages all the hardware components and is responsible for executing the ineterpreted(converted) DATA of Shell.
+
+Note:
+In Python everything is treated as Objects and in Linux everything is treated as Files
+
+
+=================================================================================
+
+Types of files in Linux:
+1.Normal files-ex:mp4,jpj,jpg,mp3,binary files etc
+
+2.Directory files: Directory means folders
+
+3.Device files: Evry device in Linux is represented as Device files.
+
+
+to chekc the file types we can use "ll" or "ls -l" command. If the output starts from below,
+d --> directory file 
+- --> ordinary file  
+l --> link file
+c --> charcater file
+s --> socket file 
+b --> block file 
+
+==================================================================================
+
+Linux commands:
+ll -a => to show hidden files
+cd => it will go to user home directory
+cd- => it will go to previous working directory
+which commandname => it gives the system location of the command where it exists
+
+===================================================================================
+
+Linux folder structure:
+
+/ is called as root level folder.
+* from / we have bin,sbin,etc,
+
+1.bin:
+It has binary command which can be executed by Normal user
+
+2.sbin:
+It has binary command which can be executed by Super user
+
+3.etc:
+It ha System configuration information.
+And the password data will also be stored in this location
+ex: 
+/etc/passwd ==> it has all user information
+/etc/group ==> it has all group information
+/etc/hosts ==> it has DNS,IP info
+
+=======================================================================================
+
+File Permissions:
+
+chmod:
+0=0=nothing
+1=1=excecute(x)
+2=2=write(w)
+3=2+1=w+x
+4=read
+5=4+1=r+x
+6=4+2=r+w
+7=4+2+1=r+w+x
+
+============================================================================================
+
+
+
+
+
+
