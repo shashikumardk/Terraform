@@ -1,3 +1,5 @@
+To learn chmod
+
 In Linux we have , 
 User-->Shell-->Kernel-->Hardware structure. Where the shell scripting written is checked and if command is valid then it
 converts the command to kernel understandable laungauge.
@@ -58,6 +60,21 @@ ex:
 =======================================================================================
 
 File Permissions:
+
+chmod:
+0=0=nothing
+1=1=excecute(x)
+2=2=write(w)
+3=2+1=w+x
+4=read
+5=4+1=r+x
+6=4+2=r+w
+7=4+2+1=r+w+x
+
+============================================================================================
+
+
+
 
 
 
