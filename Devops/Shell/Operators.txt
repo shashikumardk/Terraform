@@ -1,0 +1,111 @@
+=====================================================================
+====================OPERATORS========================================
+=====================================================================
+
+A.Arithmetic operator
+
+A.1.Addition:
+
+command:
+a=2; b=2; echo "$(($a + $b))"
+a=2; b=2; echo `expr $a + $b`
+
+
+
+A.2.Subtraction:
+
+command:
+a=2; b=2; echo "$(($a - $b))"
+a=2; b=2; echo `expr $a - $b`
+
+
+
+A.3.Division:
+
+command:
+a=2; b=2; echo "$(($a / $b))"
+a=2; b=2; echo `expr $a / $b`
+
+
+
+A.4.Multiplication:
+
+command:
+a=2; b=2; echo "$(($a * $b))"
+a=2; b=2; echo `expr $a \* $b`
+
+
+
+A.5.Assignment
+
+command:
+a=2; b=2; echo "$(($a == $b))"
+
+
+
+A.6.Equality
+
+command:
+$a== $b
+
+
+
+A.7.Not Equality
+
+command:
+$a!= $b
+
+
+
+======================================================================
+
+
+B.Relational Operator
+
+realtional operators are -eq, -ne, -gt, -lt, -ge, -le
+
+example:
+
+a=2
+b=1
+
+if [ $a -eq $b ]
+then
+   echo "it is equal"
+else
+   echo "it is not equal"
+fi
+
+
+========================================================================
+
+
+C. Boolean Operator
+
+Boolean operators are
+!  ---> inverts true to false and false to true
+-o ---> is logical OR Operator
+-a ---> is logical AND operator
+
+
+========================================================================
+
+
+
+D. Others
+
+String Operators:
+
+1.-z check for Zero
+command:
+a=1 ; [-z$a]
+
+
+2.-n check for nonZero
+
+command:
+a=1 ; [$a]
+
+
+
+========================================================================

@@ -1,0 +1,6 @@
+Arrays:
+command:array_var=(1 2 3 4 5 6)
+--output:
+echo ${array_var[@]}  # @--> makes to print all the values
+echo ${array_var[*]}  # *--> makes to print all the values
+echo ${array_var[1]}  # *--> makes to print value at the index
