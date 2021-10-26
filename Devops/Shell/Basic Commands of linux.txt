@@ -1,0 +1,19 @@
+1. bc - we use bc command for calculation. 
+command:echo "1 + 1" | bc 
+output: 2
+
+
+2.writing output ot a file
+Command:echo "Hello, text1" > hello.txt
+comments: it overwrites the DATA and adds the DATA in echo line
+
+command: echo "Hello, text2" >> hello.txt
+comments: it appends/doesn't overwrite DATA for an existing data.
+
+
+Note: 
+When command is run successfully exit code will alwyas be 0.
+If command has error then exit code will always be 1. To check, 
+command: pwd ; echo $?
+output:  1
+
