@@ -1,0 +1,10 @@
+1.Namespace:
+Name space is logical isolation of combined capacity of Nodes.
+In k8s we have default Namespace. They are,
+*Default
+*Kube-node-lease
+*kube-public
+*kube-system
+
+
+2.
