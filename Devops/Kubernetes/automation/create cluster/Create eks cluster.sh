@@ -1,0 +1,1 @@
+aws eks --region us-west-2 create-cluster --name uswe2-devops-vpc-kubernetestest-275 --role-arn arn:aws:iam::005217085396:role/uswe2-devops-vpc-role-275 --resources-vpc-config subnetIds=subnet-03e8c8784680f6e79,subnet-00792c55adf75f91c,securityGroupIds=sg-0cb75cc7a4967a742 --profile rfasbx-admin

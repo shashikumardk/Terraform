@@ -46,6 +46,37 @@ Both Docker and Kubernetes are different where,
 
 
 
+========================================================================================
+========================================================================================
+
+How Kubectl get authorized and authenticated to API server?
+-authentication=certificate
+-authorization=RBAC
+
+
+=========================================================================================
+==============================Content of Config file=====================================
+=========================================================================================
+
+Clustor(s):
+	clustor1: http:/ip/aws.com
+	clustor2: http:/ip/aws.com	
+	clustor3: http:/ip/aws.com
+Context(s):
+	context1: cluster1 + user3	
+	context2: cluster2 + user2
+	context3: cluster3 + user1
+curr-context = context2
+User(s):
+	user1: key+cert
+	user2: key+cert
+	user3: key+cert
+
+
+=========================================================================================
+=========================================================================================
+
+
 
 
 
