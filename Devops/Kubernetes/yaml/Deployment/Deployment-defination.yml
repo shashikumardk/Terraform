@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    type: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: prod
+  template:
+    metadata:
+      name: pooo
+      labels:
+        type: prod
+        rescource: pod
+    spec:
+      containers:
+        - name: cooo
+          image: nginx
