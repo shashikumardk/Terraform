@@ -5,10 +5,10 @@ metadata:
   labels:
     type: nodeport
 spec:
-  type: nodeport   #if type is not mentioned then cluster IP will be considered by default
+  type: NodePort   #if type is not mentioned then cluster IP will be considered by default
   selector:
     type: prod
   ports:
-    - targetport: 80 #This is at the pod end, if this is not mentioned then below port section value will be considered. This is not an mandatory section.
-      port: 80  #This is the outgoing port at the service. This is mandatory.
-      nodeport: 30000 #This is the port where service will pick traffic from. If it is not mentioned then by default port will be considered from 30000 to 32767.
+    - port: 80  #This is the outgoing port at the service. This is mandatory.
+      targetPort: 80 #This is at the pod end, if this is not mentioned then below port section value will be considered. This is not an mandatory section.
+      nodePort: 30000 #This is the port where service will pick traffic from. If it is not mentioned then by default port will be considered from 30000 to 32767.
