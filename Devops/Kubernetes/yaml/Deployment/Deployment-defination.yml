@@ -1,16 +1,20 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: test-rc
+  name: test-deployment
   labels:
     type: test
 spec:
-  replicas: 3
+  replicas: 2
+  selector:
+    matchLabels:
+      type: prod
   template:
     metadata:
       name: pooo
       labels:
-        type: pod
+        type: prod
+        rescource: pod
     spec:
       containers:
         - name: cooo
