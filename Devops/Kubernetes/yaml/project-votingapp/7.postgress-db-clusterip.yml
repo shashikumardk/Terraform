@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: db
+  labels:
+    app: db-workerapp
+    type: cluster-ip-postgress
+spec:
+  type: ClusterIP
+  Selector:
+    app: postgress-db
+  ports:
+    - port: 3432
+      targetport: 3432
