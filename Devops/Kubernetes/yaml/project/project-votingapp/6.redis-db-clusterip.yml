@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: redis
@@ -7,8 +7,8 @@ metadata:
     type: cluster-ip-redis
 spec:
   type: ClusterIP
-  Selector:
+  selector:
     app: redis-db
   ports:
     - port: 6379
-      targetport: 6379
+      targetPort: 6379

@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: voting-app-deployment
+  name: result-app-deployment
   labels:
     app: voting-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: voting-app
+      app: result-app
   template:
     metadata:
-      name: voting-app
+      name: result-app
       labels:
-        app: voting-app
+        app: result-app
     spec:
       containers:
         - name:  result-app

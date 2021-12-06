@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myservice-nodeport
+  name: result-nodeport
   labels:
     type: nodeport
 spec:
   type: NodePort
   selector:
-    type: prod
+    app: result-app
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30000
+      nodePort: 32000

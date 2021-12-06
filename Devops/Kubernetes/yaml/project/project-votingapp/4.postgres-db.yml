@@ -4,16 +4,17 @@ metadata:
   name: voting-app-deployment
   labels:
     app: voting-app
+    type: postgress-db-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: voting-app
+      app: postgress-db
   template:
     metadata:
-      name: voting-app
+      name: postgress-db
       labels:
-        app: voting-app
+        app: postgress-db
     spec:
       containers:
         - name:  postgres
