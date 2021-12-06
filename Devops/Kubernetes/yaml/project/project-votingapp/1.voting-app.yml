@@ -4,6 +4,7 @@ metadata:
   name: voting-app-deployment
   labels:
     app: voting-app
+    type: voting-app-deployment
 spec:
   replicas: 1
   selector:
@@ -11,12 +12,12 @@ spec:
       app: voting-app
   template:
     metadata:
-      name: voting-app
+      name: voting-app-pod
       labels:
         app: voting-app
     spec:
       containers:
-        - name:  voting-app
-          image: nginx
-        - ports:
-            containerPort: 3432
+        - name:  voting-app-container
+          image: kodekloud/examplevotingapp_vote:v1
+          ports:
+            - containerPort: 80

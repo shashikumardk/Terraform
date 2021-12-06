@@ -7,8 +7,8 @@ metadata:
 spec:
   type: NodePort
   selector:
-    type: prod
+    app: voting-app
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30000
+      nodePort: 31000

@@ -16,7 +16,7 @@ spec:
         app: redis-db
     spec:
       containers:
-        - name:  redis-db
-          image: nginx
+        - name:  redis
+          image: redis
         - ports:
-            containerPort: 3432
+            containerPort: 6379

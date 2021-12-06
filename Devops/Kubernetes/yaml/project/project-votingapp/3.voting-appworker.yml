@@ -16,5 +16,5 @@ spec:
         app: voting-app
     spec:
       containers:
-        - name:  voting-app
-          image: nginx
+        - name:  voting-workerapp
+          image: kodekloud/examplevotingapp_worker:v1
