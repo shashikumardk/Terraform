@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting-appworker-deployment
+  labels:
+    app: voting-app
+    type: voting-appworker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voting-appworker
+  template:
+    metadata:
+      name: voting-appworker
+      labels:
+        app: voting-appworker
+    spec:
+      containers:
+        - name:  voting-appworker
+          image: kodekloud/examplevotingapp_worker:v1
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
