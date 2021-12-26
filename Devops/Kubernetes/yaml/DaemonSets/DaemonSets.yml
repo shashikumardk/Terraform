@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSets
+metadata:
+  name: test-rs
+  labels:
+    type: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: prod
+  template:
+    metadata:
+      name: pooo
+      labels:
+        type: prod
+        rescource: pod
+    spec:
+      containers:
+        - name: cooo
+          image: nginx

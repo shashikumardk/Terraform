@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-configmap
+  labels:
+    type: prod
+data:
+  db_user: db_admin
+  db_passwd: password@123
+
+
+
+=====================================
+      env from config map file
+=====================================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podii
+  labels:
+    type: prod
+spec:
+  containers:
+  - name: c1
+    image: nginx
+    envFrom:
+      - configMapRef:
+          name: test-configmap
+
+
+===========================================
+         env from config map keys
+===========================================
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podii
+  labels:
+    type: prod
+spec:
+  containers:
+  - name: c1
+    image: nginx
+    env:
+      - name: db_user
+        valueFrom:
+            configMapKeyRef:
+              name: test-configmap
+              key: db_user
+
+
+===========================================
+         env from secrets
+===========================================
+

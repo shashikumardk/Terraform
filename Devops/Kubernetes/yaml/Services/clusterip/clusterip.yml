@@ -5,7 +5,7 @@ metadata:
   labels:
     type: clusterip
 spec:
-  type: ClusterIp  #if type is not mentioned then cluster IP will be considered by default
+  type: ClusterIP  #if type is not mentioned then cluster IP will be considered by default
   selector:
     type: prod
   ports:

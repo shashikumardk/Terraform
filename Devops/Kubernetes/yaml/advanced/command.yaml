@@ -8,3 +8,5 @@ spec:
   containers:
   - name: c1
     image: nginx
+    command: ["sleep"]
+    args: ["2000"]
