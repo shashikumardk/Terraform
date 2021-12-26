@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podii
+  labels:
+    type: prod
+spec:
+  containers:
+  - name: c1
+    image: nginx
+    env:
+      - name: db_user
+        value: db_admin
+      - name: db_password
+        value: password@123

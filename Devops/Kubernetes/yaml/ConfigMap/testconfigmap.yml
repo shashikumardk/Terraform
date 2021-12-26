@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: testconfigmap
+data:
+  dbuser: db_admin
+  db_admin_pass: password@123
