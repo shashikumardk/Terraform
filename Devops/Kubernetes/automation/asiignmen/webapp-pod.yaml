@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: webapp-pod
+  name: webapp-pod
+spec:
+  containers:
+  - image: kodekloud/simple-webapp-mysql
+    imagePullPolicy: Always
+    name: webapp
+    envFrom:
+      - secretRef:
+          name: db-secret
+
+===================================================
+
+apiVersion: v2
+kind: Pod
+metadata:
+  creationTimestamp: "2021-12-28T07:07:10Z"
+  labels:
+    name: mysql
+  name: mysql
+  namespace: default
+  resourceVersion: "801"
+  uid: e38465ba-08d5-40dd-ad62-36d49242bb1b
+spec:
+  containers:
+    - env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: password123
+        image: mysql:5.6
+        imagePullPolicy: IfNotPresent
+        name: mysql
+        ports:
+          - containerPort: 3306
